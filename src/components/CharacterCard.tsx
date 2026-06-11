@@ -1,3 +1,4 @@
+import { forwardRef } from "react";
 import { motion } from "motion/react";
 import { Skull, HeartPulse, Sparkles, Snowflake, Clapperboard, Swords, CalendarDays } from "lucide-react";
 import type { Character } from "../types";
@@ -17,12 +18,14 @@ const ACCENT_RING: Record<Character["accent"], string> = {
   verdant: "hover:glow-cerulean",
 };
 
-export function CharacterCard({ character, onSelect }: { character: Character; onSelect: (c: Character) => void }) {
+export const CharacterCard = forwardRef<HTMLButtonElement, { character: Character; onSelect: (c: Character) => void }>(
+  function CharacterCard({ character, onSelect }, ref) {
   const status = STATUS_META[character.status];
   const StatusIcon = status.icon;
 
   return (
     <motion.button
+      ref={ref}
       layout
       layoutId={`card-${character.id}`}
       initial={{ opacity: 0, scale: 0.92, y: 12 }}
@@ -80,4 +83,4 @@ export function CharacterCard({ character, onSelect }: { character: Character; o
       </div>
     </motion.button>
   );
-}
+});

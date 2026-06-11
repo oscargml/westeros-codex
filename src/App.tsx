@@ -11,6 +11,7 @@ import { CharacterCard } from "./components/CharacterCard";
 import { RelationshipGraph } from "./components/RelationshipGraph";
 import { BentoDetails } from "./components/BentoDetails";
 import { Timeline } from "./components/Timeline";
+import { TriviaVault } from "./components/TriviaVault";
 import { FilterBar } from "./components/FilterBar";
 import { AdSlot } from "./components/AdSlot";
 
@@ -122,6 +123,7 @@ export default function App() {
             <a href="#codex" className="hover:text-amber-glow">Codex</a>
             <a href="#graph" className="hover:text-amber-glow">Graph</a>
             <a href="#timeline" className="hover:text-amber-glow">Timeline</a>
+            <a href="#trivia" className="hover:text-amber-glow">Trivia</a>
             <a href="#library" className="hover:text-amber-glow">Library</a>
           </nav>
         </div>
@@ -185,6 +187,9 @@ export default function App() {
 
         {/* master timeline */}
         <Timeline onSelect={setSelected} />
+
+        {/* browsable trivia vault */}
+        <TriviaVault onSelect={setSelected} />
 
         {/* monetization / library */}
         <section id="library" className="bento-card p-6">
