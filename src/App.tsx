@@ -229,6 +229,14 @@ export default function App() {
       {/* footer */}
       <footer className="border-t border-slate-800 py-8">
         <div className="mx-auto w-full max-w-7xl px-4 text-center">
+          <nav className="mb-4 flex flex-wrap items-center justify-center gap-x-5 gap-y-2 font-mono text-[10px] uppercase tracking-widest text-slate-400">
+            <a href="/characters" className="hover:text-amber-glow">All Characters</a>
+            <a href="/about" className="hover:text-amber-glow">About</a>
+            <a href="/contact" className="hover:text-amber-glow">Contact</a>
+            <a href="/privacy" className="hover:text-amber-glow">Privacy</a>
+            <a href="/terms" className="hover:text-amber-glow">Terms</a>
+            <a href="/disclaimer" className="hover:text-amber-glow">Disclaimer</a>
+          </nav>
           <p className="font-mono text-[10px] uppercase tracking-widest text-slate-500">
             Westeros Codex — an unofficial fan encyclopedia. Game of Thrones™ &amp; ASOIAF © HBO / George R.R. Martin.
           </p>

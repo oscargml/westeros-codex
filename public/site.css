@@ -1,0 +1,95 @@
+/* Westeros Codex — shared styling for static info/legal pages.
+   Mirrors the Cosmic Slate palette used by the React app (src/index.css). */
+:root {
+  --void: #0b0e14;
+  --slate-950: #0f131c;
+  --slate-900: #151b27;
+  --slate-850: #1a2231;
+  --slate-800: #212b3d;
+  --slate-700: #2e3a50;
+  --slate-500: #5b6b85;
+  --slate-400: #8593ab;
+  --slate-300: #aeb9cc;
+  --slate-200: #d3dae6;
+  --amber: #f5b952;
+  --cerulean: #4fb6e8;
+  --blood: #e05a5a;
+  --display: "Space Grotesk", ui-sans-serif, system-ui, sans-serif;
+  --sans: "Inter", ui-sans-serif, system-ui, sans-serif;
+  --mono: "JetBrains Mono", ui-monospace, monospace;
+}
+
+* { box-sizing: border-box; }
+
+html { scroll-behavior: smooth; }
+
+body {
+  margin: 0;
+  background-color: var(--void);
+  color: var(--slate-200);
+  font-family: var(--sans);
+  line-height: 1.65;
+  background-image:
+    radial-gradient(ellipse 80% 50% at 50% -10%, rgba(79, 182, 232, 0.06), transparent),
+    radial-gradient(ellipse 60% 40% at 90% 110%, rgba(245, 185, 82, 0.05), transparent);
+  background-attachment: fixed;
+}
+
+a { color: var(--cerulean); text-decoration: none; }
+a:hover { color: var(--amber); text-decoration: underline; }
+
+::selection { background: rgba(245, 185, 82, 0.3); }
+
+.wrap { max-width: 820px; margin: 0 auto; padding: 0 1.25rem; }
+
+/* Header / nav */
+.site-header {
+  position: sticky; top: 0; z-index: 40;
+  border-bottom: 1px solid var(--slate-800);
+  background: rgba(11, 14, 20, 0.85);
+  backdrop-filter: blur(12px);
+}
+.site-header .bar {
+  max-width: 1100px; margin: 0 auto; padding: 0.75rem 1.25rem;
+  display: flex; align-items: center; justify-content: space-between; gap: 1rem; flex-wrap: wrap;
+}
+.brand { display: flex; align-items: center; gap: 0.65rem; }
+.brand .sigil {
+  display: grid; place-items: center; width: 2.2rem; height: 2.2rem;
+  border-radius: 0.7rem; border: 1px solid rgba(245, 185, 82, 0.4);
+  background: rgba(245, 185, 82, 0.1); font-size: 1.1rem;
+}
+.brand h1, .brand .name { margin: 0; font-family: var(--display); font-size: 1rem; font-weight: 700; color: #fff; line-height: 1; }
+.brand .tag { margin: 0.2rem 0 0; font-family: var(--mono); font-size: 0.55rem; letter-spacing: 0.2em; text-transform: uppercase; color: var(--slate-500); }
+.site-nav { display: flex; gap: 1rem; font-family: var(--mono); font-size: 0.7rem; letter-spacing: 0.05em; text-transform: uppercase; color: var(--slate-400); flex-wrap: wrap; }
+
+/* Article card */
+main { padding: 2.5rem 0 4rem; }
+.card {
+  background: linear-gradient(160deg, var(--slate-900), var(--slate-950));
+  border: 1px solid rgba(91, 107, 133, 0.22);
+  border-radius: 1rem;
+  padding: 2rem 2.25rem;
+}
+.kicker { font-family: var(--mono); font-size: 0.62rem; letter-spacing: 0.3em; text-transform: uppercase; color: var(--cerulean); margin: 0 0 0.5rem; }
+h1.title { font-family: var(--display); font-size: clamp(1.8rem, 4vw, 2.6rem); line-height: 1.1; color: #fff; margin: 0 0 1rem; }
+h2 { font-family: var(--display); color: #fff; font-size: 1.25rem; margin: 2rem 0 0.6rem; }
+h3 { font-family: var(--display); color: var(--slate-200); font-size: 1rem; margin: 1.4rem 0 0.4rem; }
+p, li { color: var(--slate-300); }
+strong { color: var(--slate-200); }
+.muted { color: var(--slate-500); font-size: 0.85rem; }
+.updated { font-family: var(--mono); font-size: 0.7rem; color: var(--slate-500); margin-top: 0.25rem; }
+hr { border: none; border-top: 1px solid var(--slate-800); margin: 2rem 0; }
+
+/* Footer */
+.site-footer { border-top: 1px solid var(--slate-800); padding: 2rem 0; margin-top: 2rem; }
+.site-footer .links { display: flex; gap: 1.1rem; justify-content: center; flex-wrap: wrap; font-family: var(--mono); font-size: 0.68rem; text-transform: uppercase; letter-spacing: 0.05em; }
+.site-footer .legal { text-align: center; font-family: var(--mono); font-size: 0.62rem; letter-spacing: 0.12em; text-transform: uppercase; color: var(--slate-500); margin-top: 1rem; }
+
+.btn {
+  display: inline-block; margin-top: 1.5rem; padding: 0.6rem 1.1rem;
+  border-radius: 0.7rem; border: 1px solid rgba(79, 182, 232, 0.4);
+  background: rgba(79, 182, 232, 0.1); color: var(--cerulean);
+  font-family: var(--mono); font-size: 0.72rem; text-transform: uppercase; letter-spacing: 0.06em;
+}
+.btn:hover { background: rgba(79, 182, 232, 0.2); text-decoration: none; }
