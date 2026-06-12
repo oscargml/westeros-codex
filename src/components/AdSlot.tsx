@@ -1,27 +1,53 @@
-import { Megaphone } from "lucide-react";
+import { useEffect, useRef } from "react";
+
+const AD_CLIENT = "ca-pub-8643026289824701";
 
 /**
- * AdSense placeholder slot. When going live, replace the inner div with the
- * standard <ins class="adsbygoogle"> snippet and your data-ad-slot id, and
- * enable the adsbygoogle.js script tag in index.html.
+ * Slot IDs come from AdSense → Ads → By ad unit → Display ads.
+ * Create one responsive display unit per placement and paste its
+ * data-ad-slot id here. Empty string = slot not created yet, renders nothing.
  */
+const AD_SLOTS: Record<string, string> = {
+  Leaderboard: "",
+  "Mid-content": "",
+  Footer: "",
+  "In-profile": "",
+};
+
+declare global {
+  interface Window {
+    adsbygoogle?: unknown[];
+  }
+}
+
 export function AdSlot({ variant = "banner", label }: { variant?: "banner" | "rect" | "skyscraper"; label?: string }) {
-  const sizes = {
-    banner: "h-[90px] w-full",
-    rect: "h-[250px] w-full",
-    skyscraper: "h-[600px] w-full max-w-[300px]",
-  };
+  const slot = AD_SLOTS[label ?? ""] ?? "";
+  const insRef = useRef<HTMLModElement>(null);
+  const pushed = useRef(false);
+
+  useEffect(() => {
+    if (!slot || pushed.current || !insRef.current) return;
+    pushed.current = true;
+    try {
+      (window.adsbygoogle = window.adsbygoogle || []).push({});
+    } catch {
+      // ad blocker or script not loaded — fail silently
+    }
+  }, [slot]);
+
+  if (!slot) return null;
+
+  const minHeights = { banner: 90, rect: 250, skyscraper: 600 };
+
   return (
-    <div
-      className={`bento-card flex items-center justify-center gap-2 border-dashed ${sizes[variant]}`}
-      role="complementary"
-      aria-label="Advertisement"
-      data-ad-placeholder={variant}
-    >
-      <Megaphone size={14} className="text-slate-500" />
-      <span className="font-mono text-[10px] uppercase tracking-widest text-slate-500">
-        {label ?? "Advertisement"} · AdSense {variant}
-      </span>
-    </div>
+    <ins
+      ref={insRef}
+      className="adsbygoogle"
+      style={{ display: "block", minHeight: minHeights[variant] }}
+      data-ad-client={AD_CLIENT}
+      data-ad-slot={slot}
+      data-ad-format="auto"
+      data-full-width-responsive="true"
+    />
   );
 }
