@@ -86,9 +86,9 @@ python -m http.server 8055 --directory dist
   (SPA + every prerendered page). Auto Ads serve as the fallback; the in-app
   `AdSlot` components mark manual placements to wire `data-ad-slot` IDs into
   later if desired.
-- **Affiliate** — the "Citadel Library" cards in `src/App.tsx` use Amazon
-  Associates links. **Replace `YOUR-AFFILIATE-TAG`** with your real tag before
-  relying on commissions.
+- **Affiliate** — the "Citadel Library" cards in `src/App.tsx` and the book
+  links in `src/components/BentoDetails.tsx` use Amazon Associates tag
+  `globalmx-20`.
 - **Google Analytics** — measurement ID `G-ZRJR6F1N3B`.
 - **Search Console** — verification meta tag present in `index.html`.
 - **Structured data** — `WebSite` (home), `Article` + `BreadcrumbList` (each
@@ -96,6 +96,5 @@ python -m http.server 8055 --directory dist
 
 ### Remaining manual steps
 
-1. Replace the Amazon affiliate tag `YOUR-AFFILIATE-TAG` in `src/App.tsx`.
-2. Submit `https://gameofthrones.uk/sitemap.xml` in Google Search Console.
-3. (Optional) Paste real AdSense `data-ad-slot` IDs into the `AdSlot` units.
+1. Submit `https://gameofthrones.uk/sitemap.xml` in Google Search Console.
+2. (Optional) Paste real AdSense `data-ad-slot` IDs into the `AdSlot` units.

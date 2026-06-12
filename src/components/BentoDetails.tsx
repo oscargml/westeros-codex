@@ -279,9 +279,9 @@ export function BentoDetails({
                   {character.name}'s book arc runs far deeper than the screen version. Affiliate links — purchases support the Codex:
                 </p>
                 <div className="flex flex-wrap gap-2">
-                  <a className="rounded-full border border-amber-glow/40 bg-amber-glow/10 px-3 py-1.5 font-mono text-[10px] text-amber-glow hover:bg-amber-glow/20" href="https://www.amazon.com/dp/0553593714?tag=YOUR-AFFILIATE-TAG" target="_blank" rel="noopener sponsored">A Game of Thrones →</a>
-                  <a className="rounded-full border border-amber-glow/40 bg-amber-glow/10 px-3 py-1.5 font-mono text-[10px] text-amber-glow hover:bg-amber-glow/20" href="https://www.amazon.com/dp/0345535529?tag=YOUR-AFFILIATE-TAG" target="_blank" rel="noopener sponsored">5-Book Boxed Set →</a>
-                  <a className="rounded-full border border-cerulean/40 bg-cerulean/10 px-3 py-1.5 font-mono text-[10px] text-cerulean hover:bg-cerulean/20" href="https://www.amazon.com/dp/1524796280?tag=YOUR-AFFILIATE-TAG" target="_blank" rel="noopener sponsored">Fire &amp; Blood →</a>
+                  <a className="rounded-full border border-amber-glow/40 bg-amber-glow/10 px-3 py-1.5 font-mono text-[10px] text-amber-glow hover:bg-amber-glow/20" href="https://www.amazon.com/dp/0553593714?tag=globalmx-20" target="_blank" rel="noopener sponsored">A Game of Thrones →</a>
+                  <a className="rounded-full border border-amber-glow/40 bg-amber-glow/10 px-3 py-1.5 font-mono text-[10px] text-amber-glow hover:bg-amber-glow/20" href="https://www.amazon.com/dp/0345535529?tag=globalmx-20" target="_blank" rel="noopener sponsored">5-Book Boxed Set →</a>
+                  <a className="rounded-full border border-cerulean/40 bg-cerulean/10 px-3 py-1.5 font-mono text-[10px] text-cerulean hover:bg-cerulean/20" href="https://www.amazon.com/dp/1524796280?tag=globalmx-20" target="_blank" rel="noopener sponsored">Fire &amp; Blood →</a>
                 </div>
               </Widget>
             </div>

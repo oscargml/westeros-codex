@@ -202,10 +202,10 @@ export default function App() {
           </p>
           <div className="mt-4 grid gap-3 sm:grid-cols-2 lg:grid-cols-4">
             {[
-              { title: "A Song of Ice and Fire — 5-Book Set", note: "The complete saga so far. Start here.", href: "https://www.amazon.com/dp/0345535529?tag=YOUR-AFFILIATE-TAG" },
-              { title: "Fire & Blood", note: "300 years of Targaryen history — the House of the Dragon source.", href: "https://www.amazon.com/dp/1524796280?tag=YOUR-AFFILIATE-TAG" },
-              { title: "The World of Ice & Fire", note: "Illustrated lore compendium of Westeros & Essos.", href: "https://www.amazon.com/dp/0553805444?tag=YOUR-AFFILIATE-TAG" },
-              { title: "GoT: The Complete Series (Blu-ray)", note: "All eight seasons, remastered.", href: "https://www.amazon.com/dp/B07ZHGFW7Q?tag=YOUR-AFFILIATE-TAG" },
+              { title: "A Song of Ice and Fire — 5-Book Set", note: "The complete saga so far. Start here.", href: "https://www.amazon.com/dp/0345535529?tag=globalmx-20" },
+              { title: "Fire & Blood", note: "300 years of Targaryen history — the House of the Dragon source.", href: "https://www.amazon.com/dp/1524796280?tag=globalmx-20" },
+              { title: "The World of Ice & Fire", note: "Illustrated lore compendium of Westeros & Essos.", href: "https://www.amazon.com/dp/0553805444?tag=globalmx-20" },
+              { title: "GoT: The Complete Series (Blu-ray)", note: "All eight seasons, remastered.", href: "https://www.amazon.com/dp/B07ZHGFW7Q?tag=globalmx-20" },
             ].map((b) => (
               <a
                 key={b.title}
