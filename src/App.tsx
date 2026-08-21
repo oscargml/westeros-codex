@@ -14,6 +14,7 @@ import { Timeline } from "./components/Timeline";
 import { TriviaVault } from "./components/TriviaVault";
 import { FilterBar } from "./components/FilterBar";
 import { AdSlot } from "./components/AdSlot";
+import { AmazonAd } from "./components/AmazonAd";
 
 const EMPTY_FILTERS: FilterState = {
   query: "",
@@ -187,6 +188,9 @@ export default function App() {
 
         {/* master timeline */}
         <Timeline onSelect={setSelected} />
+
+        {/* Amazon affiliate ad banner */}
+        <AmazonAd />
 
         {/* browsable trivia vault */}
         <TriviaVault onSelect={setSelected} />
